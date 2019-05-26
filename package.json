@@ -15,6 +15,8 @@
   "author": "yuta1402",
   "license": "ISC",
   "devDependencies": {
+    "@types/react": "^16.8.18",
+    "@types/react-dom": "^16.8.4",
     "electron": "^5.0.2",
     "electron-packager": "^13.1.1",
     "html-webpack-plugin": "^3.2.0",
@@ -23,5 +25,8 @@
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
 }
