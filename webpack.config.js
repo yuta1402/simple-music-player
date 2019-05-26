@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const mainConfig = {
   target: "electron-main",
@@ -42,7 +43,7 @@ const rendererConfig = {
     filename: "[name].js"
   },
   resolve: {
-    extensions: [".js", ".jsx", ".ts", ".tsx"]
+    extensions: [".js", ".jsx", ".ts", ".tsx", "css, scss"]
   },
   module: {
     rules: [
@@ -50,6 +51,26 @@ const rendererConfig = {
         test: /\.tsx?$/,
         exclude: /node_modules/,
         loaders: "ts-loader"
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              url: true,
+              modules: true,
+              sourceMap: true
+            }
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true
+            }
+          }
+        ]
       }
     ]
   },
@@ -60,6 +81,9 @@ const rendererConfig = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html"
+    }),
+    new MiniCssExtractPlugin({
+      filename: "bundle.css"
     })
   ]
 };
