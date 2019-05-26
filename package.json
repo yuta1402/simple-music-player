@@ -19,6 +19,8 @@
   "devDependencies": {
     "@types/react": "^16.8.18",
     "@types/react-dom": "^16.8.4",
+    "@types/react-redux": "^7.0.9",
+    "@types/redux": "^3.6.0",
     "css-loader": "^2.1.1",
     "electron": "^5.0.2",
     "electron-packager": "^13.1.1",
@@ -36,6 +38,8 @@
   },
   "dependencies": {
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
+    "redux": "^4.0.1"
   }
 }
