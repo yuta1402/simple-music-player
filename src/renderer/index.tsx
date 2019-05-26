@@ -1,13 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-
-class App extends React.Component {
-    render() {
-        return (
-            <div>Hello world!</div>
-        );
-    }
-}
+import App from "./components/App";
 
 // D&Dのデフォルトの挙動をキャンセル
 document.ondragover = document.ondrop = (e) => {
